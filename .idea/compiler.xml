@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="one.digitalinnovation.experts.product-catalog" target="11" />
+      <module name="one.digitalinnovation.experts.product-catalog.main" target="11" />
+      <module name="one.digitalinnovation.experts.product-catalog.test" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
