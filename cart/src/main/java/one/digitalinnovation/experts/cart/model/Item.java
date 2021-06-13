@@ -7,6 +7,11 @@ public class Item {
     private Integer productId;
     private Integer amount;
 
+    public Item(Integer productId, Integer amount) {
+        this.productId = productId;
+        this.amount = amount;
+    }
+
     public Integer getProductId() {
         return productId;
     }

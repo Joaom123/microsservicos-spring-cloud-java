@@ -6,13 +6,14 @@ import one.digitalinnovation.experts.cart.repository.CartRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/cart")
 public class CartController {
     @Autowired
-    private CartRepository cartRepository;
+    private CartRepository  cartRepository;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.POST)
     public Cart addItem(@PathVariable("id") Integer id, @RequestBody Item item) {
@@ -20,12 +21,13 @@ public class CartController {
         Cart cart;
 
         if (savedCart.equals(Optional.empty())) {
-            cart = new Cart();
+            cart = new Cart(id);
         } else {
             cart = savedCart.get();
         }
 
         cart.getItems().add(item);
+        System.out.println(cart.getItems());
         return cartRepository.save(cart);
     }
 
