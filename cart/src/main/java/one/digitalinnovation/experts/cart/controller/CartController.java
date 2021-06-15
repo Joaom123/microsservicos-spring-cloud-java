@@ -26,7 +26,12 @@ public class CartController {
             cart = savedCart.get();
         }
 
-        cart.getItems().add(item);
+        List<Item> itemList = cart.getItems();
+        itemList.add(item);
+
+        System.out.println(cart.getItems());
+        System.out.println(itemList);
+        cart.setItems(itemList);
         System.out.println(cart.getItems());
         return cartRepository.save(cart);
     }
